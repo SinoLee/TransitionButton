@@ -26,6 +26,9 @@ class FirstViewController: UIViewController {
                 // .normal
                 button.stopAnimation(animationStyle: .expand, completion: {
                     let secondVC = SecondViewController()
+                    if #available(iOS 13.0, *) {
+                        secondVC.modalPresentationStyle = .fullScreen
+                    }
                     self.present(secondVC, animated: true, completion: nil)
                 })
             })
